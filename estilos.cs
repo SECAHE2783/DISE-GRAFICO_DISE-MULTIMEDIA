@@ -1,1 +1,59 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5f5;
+    color: #5b0a0a;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #b22222; /* rojo cálido */
+    margin-bottom: 5px;
+}
+
+p {
+    color: #7f1d1d;
+    font-size: 1.1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(178, 34, 34, 0.3);
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #b22222;
+    text-align: left;
+}
+
+th {
+    background-color: #b22222;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fceaea;
+}
+
+tbody tr:hover {
+    background-color: #f9b9b9;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
 
