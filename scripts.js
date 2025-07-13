@@ -1,3 +1,5 @@
+// scripts.js
+
 const malla = [
   {
     semestre: 1,
@@ -65,7 +67,7 @@ const malla = [
       { nombre: "Producción fotográfica", creditos: 6, prerequisitos: ["Principios de fotografía"] },
       { nombre: "Practicum 1: diseño gráfico", creditos: 7.5, prerequisitos: ["Proyectos de comunicación visual"] },
       { nombre: "Envase y empaque", creditos: 6, prerequisitos: ["Ilustración"] },
-      { nombre: "Creatividad e innovación publicitaria (MINOR)", creditos: 6 },
+      { nombre: "Creatividad e innovación publicitaria", creditos: 6 },
       { nombre: "Storyboard", creditos: 4.5, prerequisitos: ["Fundamentos y técnicas de animación"] },
       { nombre: "Audio digital", creditos: 4.5 },
       { nombre: "Animación 2D I", creditos: 6, prerequisitos: ["Storyboard"] },
@@ -78,9 +80,9 @@ const malla = [
     semestre: 6,
     materias: [
       { nombre: "Proyectos de diseño editorial", creditos: 7.5, prerequisitos: ["Practicum 1: diseño gráfico"] },
-      { nombre: "Diseño y mercadotecnia", creditos: 6 },
+      { nombre: "Diseño y mercadotecnia", creditos: 6, prerequisitos: ["Fundamentos del diseño"] },
       { nombre: "Sistemas de reproducción", creditos: 6, prerequisitos: ["Envase y empaque"] },
-      { nombre: "Comunicación estratégica para productos y servicios (MINOR)", creditos: 6 },
+      { nombre: "Comunicación estratégica para productos y servicios", creditos: 6 },
       { nombre: "Video digital", creditos: 4.5, prerequisitos: ["Storyboard"] },
       { nombre: "Fundamentos de interactividad y experiencia de usuario (UX)", creditos: 4.5 },
       { nombre: "Concept Art: Personajes y escenarios", creditos: 6, prerequisitos: ["Animación 2D I"] },
@@ -169,12 +171,12 @@ const malla = [
 // Estado de materias cursadas
 const estadoMaterias = {};
 
-// Guarda el estado en localStorage
+// Guardar estado en localStorage
 function guardarEstado() {
   localStorage.setItem("estadoMaterias", JSON.stringify(estadoMaterias));
 }
 
-// Carga el estado desde localStorage
+// Cargar estado desde localStorage
 function cargarEstado() {
   const saved = localStorage.getItem("estadoMaterias");
   if (saved) {
@@ -182,49 +184,60 @@ function cargarEstado() {
   }
 }
 
-// Cambia el estado de una materia y vuelve a renderizar
+// Cambiar estado materia y re-renderizar
 function toggleMateria(nombre) {
   estadoMaterias[nombre] = !estadoMaterias[nombre];
   guardarEstado();
   renderMalla();
 }
 
-// Verifica si una materia se puede habilitar según sus prerrequisitos
+// Verifica si la materia puede habilitarse (prerrequisitos cumplidos)
 function puedeHabilitar(materia) {
   if (!materia.prerequisitos) return true;
   return materia.prerequisitos.every(pr => estadoMaterias[pr]);
 }
 
-// Renderiza la tabla con todas las materias
+// Renderiza la malla en tabla
 function renderMalla() {
   const tbody = document.querySelector("#malla tbody");
   tbody.innerHTML = "";
 
   malla.forEach(semestre => {
+    // Fila título semestre
+    const trTitulo = document.createElement("tr");
+    const tdTitulo = document.createElement("td");
+    tdTitulo.colSpan = 5;
+    tdTitulo.style.fontWeight = "bold";
+    tdTitulo.style.backgroundColor = "#eee";
+    tdTitulo.textContent = `Semestre ${semestre.semestre}`;
+    trTitulo.appendChild(tdTitulo);
+    tbody.appendChild(trTitulo);
+
+    // Filas materias
     semestre.materias.forEach(materia => {
       const tr = document.createElement("tr");
 
-      // Columna Nombre
+      // Nombre
       const tdNombre = document.createElement("td");
       tdNombre.textContent = materia.nombre;
       tr.appendChild(tdNombre);
 
-      // Columna Créditos
+      // Créditos
       const tdCreditos = document.createElement("td");
       tdCreditos.textContent = materia.creditos;
       tr.appendChild(tdCreditos);
 
-      // Columna Prerrequisitos
+      // Prerrequisitos
       const tdPrerreq = document.createElement("td");
       tdPrerreq.textContent = materia.prerequisitos ? materia.prerequisitos.join(", ") : "-";
       tr.appendChild(tdPrerreq);
 
-      // Columna Semestre
+      // Semestre
       const tdSemestre = document.createElement("td");
       tdSemestre.textContent = semestre.semestre;
       tr.appendChild(tdSemestre);
 
-      // Columna Checkbox para marcar cursada
+      // Checkbox para marcar cursada
       const tdCursada = document.createElement("td");
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
@@ -244,35 +257,7 @@ function renderMalla() {
   });
 }
 
-// Inicialización al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
   cargarEstado();
   renderMalla();
 });
-2. Estilos CSS para las filas marcadas
-En tu estilos.css agrega esta clase para que las materias cursadas se vean con fondo verde claro:
-
-css
-Copiar
-Editar
-.cursada {
-  background-color: #d4edda; /* Verde claro */
-}
-3. Recuerda que el HTML tiene que tener la tabla así (como ya tienes):
-html
-Copiar
-Editar
-<table id="malla">
-  <thead>
-    <tr>
-      <th>Materia</th>
-      <th>Créditos</th>
-      <th>Prerrequisitos</th>
-      <th>Semestre</th>
-      <th>Cursada</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Aquí JS inyectará las filas -->
-  </tbody>
-</table>
