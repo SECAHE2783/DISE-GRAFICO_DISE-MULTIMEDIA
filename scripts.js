@@ -1,90 +1,4 @@
-// scripts.js
-
-// Datos de materias por semestre
 const malla = [
-  {
-    semestre: 1,
-    materias: [
-      { nombre: "Morfología", creditos: 7.5 },
-      { nombre: "Color", creditos: 6 },
-      { nombre: "Principios del dibujo", creditos: 7.5 },
-      { nombre: "Tipografía", creditos: 6 },
-      { nombre: "Dibujo vectorial", creditos: 4.5 },
-      { nombre: "Dibujo geométrico", creditos: 4.5 },
-      { nombre: "Formación universitaria I", creditos: 3 },
-      { nombre: "Ser universitario", creditos: 6 },
-      { nombre: "Español 1", creditos: 0 }
-    ]
-  },
-  {
-    semestre: 2,
-    materias: [
-      { nombre: "Fundamentos del diseño", creditos: 7.5, prerequisitos: ["Morfología"] },
-      { nombre: "Elementos de semiótica para el diseño", creditos: 6 },
-      { nombre: "Dibujo analítico", creditos: 7.5, prerequisitos: ["Principios del dibujo"] },
-      { nombre: "Principios de fotografía", creditos: 6 },
-      { nombre: "Historia del diseño", creditos: 6 },
-      { nombre: "Composición tipográfica", creditos: 6, prerequisitos: ["Tipografía"] },
-      { nombre: "Taller o actividad electiva", creditos: 3 },
-      { nombre: "Liderazgo y desarrollo personal", creditos: 6 },
-      { nombre: "Español 2", creditos: 0 },
-      { nombre: "COMPETENCIAS DIGITALES 1", creditos: 0 },
-      { nombre: "INGLES 5", creditos: 0 }
-    ]
-  }
-];
-{
-  "3": [
-    { name: "Proyectos de comunicación visual", credits: 7.5, prerequisites: ["Fundamentos del diseño", "Color"] },
-    { name: "Producción y retoque de imagen", credits: 4.5, prerequisites: ["Principios de fotografía"] },
-    { name: "Dibujo experimental", credits: 6, prerequisites: ["Dibujo analítico"] },
-    { name: "Exploración tipográfica", credits: 6, prerequisites: ["Composición tipográfica"] },
-    { name: "Antropología fundamental", credits: 6, prerequisites: [] },
-    { name: "Electiva Anáhuac desarrollo personal habilidades relaciones publicas", credits: 6, prerequisites: [] },
-    { name: "Habilidades para el emprendimiento", credits: 3, prerequisites: [] }
-  ],
-  "4": [
-    { name: "Proyectos de identidad visual y marca", credits: 7.5, prerequisites: ["Proyectos de comunicación visual"] },
-    { name: "Edición de imagen", credits: 4.5, prerequisites: ["Producción y retoque de imagen"] },
-    { name: "Ilustración", credits: 6, prerequisites: ["Dibujo experimental"] },
-    { name: "Narrativa audiovisual y guionismo", credits: 4.5, prerequisites: [] },
-    { name: "Fundamentos y técnicas de animación", credits: 6, prerequisites: ["Habilidades para el emprendimiento"] },
-    { name: "Pensamiento creativo", credits: 4.5, prerequisites: [] },
-    { name: "Emprendimiento e innovación", credits: 6, prerequisites: ["Habilidades para el emprendimiento"] },
-    { name: "Persona y trascendencia", credits: 6, prerequisites: [] },
-    { name: "Liderazgo y equipos de alto desempeño", credits: 3, prerequisites: [] },
-    { name: "Liderazgo y desarrollo personal", credits: 6, prerequisites: [] },
-    { name: "Taller o actividad electiva", credits: 3, prerequisites: [] },
-    { name: "COMPETENCIAS DIGITALES 2", credits: 0, prerequisites: [] },
-    { name: "INGLES 6", credits: 0, prerequisites: [] }
-  ],
-  "5": [
-    { name: "Producción fotográfica", credits: 6, prerequisites: ["Principios de fotografía"] },
-    { name: "Practicum 1: diseño gráfico", credits: 7.5, prerequisites: ["Proyectos de comunicación visual"] },
-    { name: "Envase y empaque", credits: 6, prerequisites: ["Ilustración"] },
-    { name: "Creatividad e innovación publicitaria", credits: 6, prerequisites: [] },
-    { name: "Storyboard", credits: 4.5, prerequisites: ["Fundamentos y técnicas de animación"] },
-    { name: "Audio digital", credits: 4.5, prerequisites: [] },
-    { name: "Animación 2D I", credits: 6, prerequisites: ["Storyboard"] },
-    { name: "Formación universitaria II", credits: 6, prerequisites: [] },
-    { name: "Humanismo clásico y contemporáneo", credits: 6, prerequisites: [] },
-    { name: "Ética", credits: 9, prerequisites: [] }
-  ],
-  "6": [
-    { name: "Proyectos de diseño editorial", credits: 7.5, prerequisites: ["Practicum 1: diseño gráfico"] },
-    { name: "Diseño y mercadotecnia", credits: 6, prerequisites: ["Fundamentos del diseño"] },
-    { name: "Sistemas de reproducción", credits: 6, prerequisites: ["Envase y empaque"] },
-    { name: "Comunicación estratégica para productos y servicios", credits: 6, prerequisites: [] },
-    { name: "Video digital", credits: 4.5, prerequisites: ["Storyboard"] },
-    { name: "Fundamentos de interactividad y experiencia de usuario (UX)", credits: 4.5, prerequisites: [] },
-    { name: "Concept Art: Personajes y escenarios", credits: 6, prerequisites: ["Animación 2D I"] },
-    { name: "Electiva interdisciplinaria", credits: 6, prerequisites: [] }
-  ]
-};
-// scripts.js
-
-const malla = [
-  // Semestres 1 a 6 (ya definidos antes) ...
   {
     semestre: 1,
     materias: [
@@ -176,123 +90,189 @@ const malla = [
   {
     semestre: 7,
     materias: [
-      { nombre: 'Tendencias del diseño', creditos: 6 },
-      { nombre: 'Administración de proyectos de diseño', creditos: 6 },
-      { nombre: 'Embalaje y distribución', creditos: 6 },
-      { nombre: 'Practicum 2: diseño gráfico', creditos: 7.5 },
-      { nombre: 'Motion graphics y efectos visuales', creditos: 6 },
-      { nombre: 'Diseño editorial para medios digitales', creditos: 4.5 },
-      { nombre: 'Animación 2D II', creditos: 6 },
-      { nombre: 'Electiva Anáhuac Historia del arte', creditos: 6 }
+      { nombre: "Tendencias del diseño", creditos: 6 },
+      { nombre: "Administración de proyectos de diseño", creditos: 6 },
+      { nombre: "Embalaje y distribución", creditos: 6 },
+      { nombre: "Practicum 2: diseño gráfico", creditos: 7.5 },
+      { nombre: "Motion graphics y efectos visuales", creditos: 6 },
+      { nombre: "Diseño editorial para medios digitales", creditos: 4.5 },
+      { nombre: "Animación 2D II", creditos: 6 },
+      { nombre: "Electiva Anáhuac Historia del arte", creditos: 6 }
     ]
   },
   {
     semestre: 8,
     materias: [
-      { nombre: 'Diseño de la información I', creditos: 6 },
-      { nombre: 'Proyectos de diseño y publicidad', creditos: 7.5 },
-      { nombre: 'Caligrafía', creditos: 6 },
-      { nombre: 'Seminario de investigación en diseño I', creditos: 6 },
-      { nombre: 'Diseño de estilo audiovisual', creditos: 4.5 },
-      { nombre: 'Programación multimedia I', creditos: 4.5 },
-      { nombre: 'Cinematografía e iluminación (MINOR)', creditos: 6 },
-      { nombre: 'Taller o actividad electiva', creditos: 3 }
+      { nombre: "Diseño de la información I", creditos: 6 },
+      { nombre: "Proyectos de diseño y publicidad", creditos: 7.5 },
+      { nombre: "Caligrafía", creditos: 6 },
+      { nombre: "Seminario de investigación en diseño I", creditos: 6 },
+      { nombre: "Diseño de estilo audiovisual", creditos: 4.5 },
+      { nombre: "Programación multimedia I", creditos: 4.5 },
+      { nombre: "Cinematografía e iluminación (MINOR)", creditos: 6 },
+      { nombre: "Taller o actividad electiva", creditos: 3 }
     ]
   },
   {
     semestre: 9,
     materias: [
-      { nombre: 'Diseño de medios digitales', creditos: 6 },
-      { nombre: 'Aspectos legales del diseño', creditos: 6 },
-      { nombre: 'Branding digital', creditos: 6 },
-      { nombre: 'Publicidad y creación de marca (MINOR)', creditos: 6 },
-      { nombre: 'Diseño de interfaces de usuario UI', creditos: 4.5 },
-      { nombre: 'Practicum I: diseño multimedia', creditos: 6 },
-      { nombre: 'Producción audiovisual y multimedia', creditos: 6 },
-      { nombre: 'Electiva interdisciplinaria', creditos: 6 }
+      { nombre: "Diseño de medios digitales", creditos: 6 },
+      { nombre: "Aspectos legales del diseño", creditos: 6 },
+      { nombre: "Branding digital", creditos: 6 },
+      { nombre: "Publicidad y creación de marca (MINOR)", creditos: 6 },
+      { nombre: "Diseño de interfaces de usuario UI", creditos: 4.5 },
+      { nombre: "Practicum I: diseño multimedia", creditos: 6 },
+      { nombre: "Producción audiovisual y multimedia", creditos: 6 },
+      { nombre: "Electiva interdisciplinaria", creditos: 6 }
     ]
   },
   {
     semestre: 10,
     materias: [
-      { nombre: 'Practicum 3: diseño gráfico', creditos: 7.5 },
-      { nombre: 'Seminario de investigación en diseño II', creditos: 6 },
-      { nombre: 'Producción publicitaria digital (MINOR)', creditos: 6 },
-      { nombre: 'Programación multimedia II', creditos: 4.5 },
-      { nombre: 'Dirección de escena y actuación (MINOR)', creditos: 6 },
-      { nombre: 'Practicum II: diseño multimedia', creditos: 6 },
-      { nombre: 'Diseño y programación web I', creditos: 4.5 },
-      { nombre: 'Electiva interdisciplinaria', creditos: 6 }
+      { nombre: "Practicum 3: diseño gráfico", creditos: 7.5 },
+      { nombre: "Seminario de investigación en diseño II", creditos: 6 },
+      { nombre: "Producción publicitaria digital (MINOR)", creditos: 6 },
+      { nombre: "Programación multimedia II", creditos: 4.5 },
+      { nombre: "Dirección de escena y actuación (MINOR)", creditos: 6 },
+      { nombre: "Practicum II: diseño multimedia", creditos: 6 },
+      { nombre: "Diseño y programación web I", creditos: 4.5 },
+      { nombre: "Electiva interdisciplinaria", creditos: 6 }
     ]
   },
   {
     semestre: 11,
     materias: [
-      { nombre: 'Animación 3D I', creditos: 6 },
-      { nombre: 'Visualización de datos', creditos: 4.5 },
-      { nombre: 'Diseño para dispositivos móviles', creditos: 4.5 },
-      { nombre: 'Responsabilidad social y sustentabilidad', creditos: 6 },
-      { nombre: 'Ética', creditos: 9 },
-      { nombre: 'Interfaces de usuario UI', creditos: 4.5 },
-      { nombre: 'Comercialización de producción multipantalla (MINOR)', creditos: 6 },
-      { nombre: 'Electiva interdisciplinaria', creditos: 6 }
+      { nombre: "Animación 3D I", creditos: 6 },
+      { nombre: "Visualización de datos", creditos: 4.5 },
+      { nombre: "Diseño para dispositivos móviles", creditos: 4.5 },
+      { nombre: "Responsabilidad social y sustentabilidad", creditos: 6 },
+      { nombre: "Ética", creditos: 9 },
+      { nombre: "Interfaces de usuario UI", creditos: 4.5 },
+      { nombre: "Comercialización de producción multipantalla (MINOR)", creditos: 6 },
+      { nombre: "Electiva interdisciplinaria", creditos: 6 }
     ]
   },
   {
     semestre: 12,
     materias: [
-      { nombre: 'Practicum III: diseño multimedia', creditos: 6 },
-      { nombre: 'Diseño y programación web II', creditos: 4.5 },
-      { nombre: 'Animación 3D II', creditos: 6 },
-      { nombre: 'Diseño AR y VR', creditos: 6 },
-      { nombre: 'Composición por nodos: VFX', creditos: 6 },
-      { nombre: 'Animación digital (MINOR)', creditos: 6 },
-      { nombre: 'Electiva interdisciplinaria', creditos: 6 }
+      { nombre: "Practicum III: diseño multimedia", creditos: 6 },
+      { nombre: "Diseño y programación web II", creditos: 4.5 },
+      { nombre: "Animación 3D II", creditos: 6 },
+      { nombre: "Diseño AR y VR", creditos: 6 },
+      { nombre: "Composición por nodos: VFX", creditos: 6 },
+      { nombre: "Animación digital (MINOR)", creditos: 6 },
+      { nombre: "Electiva interdisciplinaria", creditos: 6 }
     ]
   }
 ];
 
-// Estado de materias
+// Estado de materias cursadas
 const estadoMaterias = {};
 
-// Marcar materias completadas y habilitar siguientes
+// Guarda el estado en localStorage
+function guardarEstado() {
+  localStorage.setItem("estadoMaterias", JSON.stringify(estadoMaterias));
+}
+
+// Carga el estado desde localStorage
+function cargarEstado() {
+  const saved = localStorage.getItem("estadoMaterias");
+  if (saved) {
+    Object.assign(estadoMaterias, JSON.parse(saved));
+  }
+}
+
+// Cambia el estado de una materia y vuelve a renderizar
 function toggleMateria(nombre) {
   estadoMaterias[nombre] = !estadoMaterias[nombre];
+  guardarEstado();
   renderMalla();
 }
 
-// Verifica si una materia puede habilitarse
+// Verifica si una materia se puede habilitar según sus prerrequisitos
 function puedeHabilitar(materia) {
   if (!materia.prerequisitos) return true;
   return materia.prerequisitos.every(pr => estadoMaterias[pr]);
 }
 
-// Generar visualización de la malla
+// Renderiza la tabla con todas las materias
 function renderMalla() {
-  const container = document.getElementById("malla");
-  container.innerHTML = "";
+  const tbody = document.querySelector("#malla tbody");
+  tbody.innerHTML = "";
 
   malla.forEach(semestre => {
-    const col = document.createElement("div");
-    col.className = "semestre";
+    semestre.materias.forEach(materia => {
+      const tr = document.createElement("tr");
 
-    const title = document.createElement("h3");
-    title.innerText = `Semestre ${semestre.semestre}`;
-    col.appendChild(title);
+      // Columna Nombre
+      const tdNombre = document.createElement("td");
+      tdNombre.textContent = materia.nombre;
+      tr.appendChild(tdNombre);
 
-    semestre.materias.forEach(mat => {
-      const btn = document.createElement("button");
-      btn.innerText = mat.nombre + ` (${mat.creditos})`;
-      btn.disabled = !puedeHabilitar(mat);
-      btn.className = estadoMaterias[mat.nombre] ? "cursada" : "pendiente";
-      btn.onclick = () => toggleMateria(mat.nombre);
-      col.appendChild(btn);
+      // Columna Créditos
+      const tdCreditos = document.createElement("td");
+      tdCreditos.textContent = materia.creditos;
+      tr.appendChild(tdCreditos);
+
+      // Columna Prerrequisitos
+      const tdPrerreq = document.createElement("td");
+      tdPrerreq.textContent = materia.prerequisitos ? materia.prerequisitos.join(", ") : "-";
+      tr.appendChild(tdPrerreq);
+
+      // Columna Semestre
+      const tdSemestre = document.createElement("td");
+      tdSemestre.textContent = semestre.semestre;
+      tr.appendChild(tdSemestre);
+
+      // Columna Checkbox para marcar cursada
+      const tdCursada = document.createElement("td");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.disabled = !puedeHabilitar(materia);
+      checkbox.checked = !!estadoMaterias[materia.nombre];
+      checkbox.addEventListener("change", () => toggleMateria(materia.nombre));
+      tdCursada.appendChild(checkbox);
+      tr.appendChild(tdCursada);
+
+      // Estilo fila según estado
+      if (estadoMaterias[materia.nombre]) {
+        tr.classList.add("cursada");
+      }
+
+      tbody.appendChild(tr);
     });
-
-    container.appendChild(col);
   });
 }
 
-document.addEventListener("DOMContentLoaded", renderMalla);
+// Inicialización al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  cargarEstado();
+  renderMalla();
+});
+2. Estilos CSS para las filas marcadas
+En tu estilos.css agrega esta clase para que las materias cursadas se vean con fondo verde claro:
 
-export default malla;
+css
+Copiar
+Editar
+.cursada {
+  background-color: #d4edda; /* Verde claro */
+}
+3. Recuerda que el HTML tiene que tener la tabla así (como ya tienes):
+html
+Copiar
+Editar
+<table id="malla">
+  <thead>
+    <tr>
+      <th>Materia</th>
+      <th>Créditos</th>
+      <th>Prerrequisitos</th>
+      <th>Semestre</th>
+      <th>Cursada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Aquí JS inyectará las filas -->
+  </tbody>
+</table>
